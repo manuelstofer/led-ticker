@@ -16,7 +16,7 @@ class Encoder:
             checksum    a xor checksum of the commands represented hex in ascii
             <E>         terminates the commands
         """
-        return '<ID%02d>' % self.device_id + command + self._checksum(command) + "<E>"
+        return '<ID%02X>' % self.device_id + command + self._checksum(command) + "<E>"
 
     def _checksum(self, str):
         """ returns the checksum in the expected format
