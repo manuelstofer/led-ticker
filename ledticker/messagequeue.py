@@ -29,7 +29,6 @@ class MessageQueue:
         while self.running:
 
             message = self.message_queue.get()
-            print "send message"
 
             self.transmitter.add_message(message, next_page)
             self.transmitter.set_schedule([next_page])
