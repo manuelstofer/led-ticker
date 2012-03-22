@@ -2,26 +2,21 @@
 import ledticker
 import time
 import sys
-from optparse import OptionParser
 from twisted.internet import protocol, reactor
 from twisted.application import service, internet
+import options
 
+options = options.get_options()
 
-# parse options
-parser = OptionParser()
-parser.add_option("-d",     '--debug',
-                  dest      = "debug",
-                  action    = "store_true",
-                  help      = "to use the server without having the device connected you can log to std")
-
-(options, args) = parser.parse_args()
-
-
-## instanciate transmitter
-if not options.debug:
-    transmitter = ledticker.Transmitter() 
+if not options.console:
+    Transmitter = ledticker.Transmitter
 else:
-    transmitter = ledticker.DebugTransmitter()
+    Transmitter = ledticker.DebugTransmitter
+
+
+transmitter = Transmitter(
+    debug = options.debug
+)
 
 # setup factory for twisted
 factory = protocol.ServerFactory()
@@ -29,6 +24,10 @@ factory.protocol = ledticker.TwistedAdapter
 factory.queue    = ledticker.MessageQueue(transmitter)
 
 # run in twisted
-reactor.listenTCP(3000,factory)
+reactor.listenTCP(
+    int(options.port),
+    factory, 
+    interface = options.interface
+)
 reactor.run()
 
