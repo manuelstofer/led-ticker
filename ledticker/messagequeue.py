@@ -15,14 +15,14 @@ class MessageQueue:
     def _setup_thread(self):
         self.message_queue = Queue.Queue()
         self.running = True
-        t = threading.Thread(target=self.message_loop)
+        t = threading.Thread(target=self._message_loop)
         t.daemon = True
         t.start()
 
     def add_message(self, message):
         self.message_queue.put(message)
 
-    def message_loop(self):
+    def _message_loop(self):
         next_page = 0
         full = False
 

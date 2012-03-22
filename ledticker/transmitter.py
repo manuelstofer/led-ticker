@@ -27,7 +27,7 @@ class Transmitter:
         )
         self.encoder = Encoder(1)
         if set_id:
-            self.set_device_id(device_id)
+            self._set_device_id(device_id)
 
     def add_message(self, message, page):
         """ adds a message to the specified page """
@@ -48,7 +48,7 @@ class Transmitter:
     def _send(self, command, response = True):
 
         data = self.encoder.encode(command)
-        self.debug_log(data)
+        self._debug_log(data)
 
         self.ser.flushInput()
         self.ser.write(self.encoder.encode(command))
@@ -60,15 +60,15 @@ class Transmitter:
                 response += self.ser.read(3)
             else:
                 response += self.ser.read(2)
-            self.debug_log('response: ' + response)
+            self._debug_log('response: ' + response)
             return response
 
-    def debug_log(self, message):
+    def _debug_log(self, message):
         if self.debug:
             print message
 
-    def set_device_id(self, device_id):
+    def _set_device_id(self, device_id):
         # set the device id
         self.ser.write('<ID><01><E>' + device_id)
-        self.debug_log('response: ' + self.ser.read(2))
+        self._debug_log('response: ' + self.ser.read(2))
 
