@@ -5,7 +5,6 @@ import Queue
 class MessageQueue:
 
     def __init__(self, transmitter, max_pages = 10, intervall = 15):
-
         self.max_pages = max_pages
         self.intervall = intervall
         self.transmitter = transmitter
@@ -30,6 +29,8 @@ class MessageQueue:
 
             message = self.message_queue.get()
 
+            # the received message is displayed first alone on the
+            # screen, without the previous message
             self.transmitter.add_message(message, next_page)
             self.transmitter.set_schedule([next_page])
 
@@ -44,6 +45,7 @@ class MessageQueue:
             if not full:
                 schedule = range(0, next_page)
 
+            # the messages are displayed reverse chronological order
             schedule.reverse()
             self.transmitter.set_schedule(schedule)
-      
+
