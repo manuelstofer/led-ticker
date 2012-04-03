@@ -2,7 +2,7 @@ import time
 import threading
 import Queue
 
-class MessageQueue:
+class MessageThrottler:
 
     def __init__(self, transmitter, max_pages = 10, intervall = 15):
         self.max_pages = max_pages

@@ -21,7 +21,7 @@ transmitter = Transmitter(
 # setup factory for twisted
 factory = protocol.ServerFactory()
 factory.protocol = ledticker.TwistedAdapter
-factory.queue    = ledticker.MessageQueue(transmitter)
+factory.queue    = ledticker.MessageThrottler(transmitter)
 
 # run in twisted
 reactor.listenTCP(

@@ -1,5 +1,5 @@
 from transmitter        import Transmitter
-from messagequeue       import MessageQueue
+from messagethrottler   import MessageThrottler
 from twistedadapter     import TwistedAdapter
 from debugtransmitter   import DebugTransmitter
 
