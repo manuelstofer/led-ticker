@@ -8,7 +8,7 @@ class Transmitter:
         - transmission is blocking
     """
     def __init__(   self, 
-                    device      = '/dev/tty.SLAB_USBtoUART',
+                    device      = '/dev/ttyUSB0',
                     set_id      = True,
                     device_id   = "01",
                     debug           = True,
