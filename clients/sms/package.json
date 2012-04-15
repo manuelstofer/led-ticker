@@ -1,0 +1,15 @@
+{
+  "author": "Manuel Stofer <manuel@takimata.ch>",
+  "name": "sms",
+  "description": "sms led ticker client",
+  "version": "0.0.0",
+  "dependencies": {
+  	"coffee-script": "*",
+	"underscore": "*"
+  },
+  "devDependencies": {},
+  "optionalDependencies": {},
+  "engines": {
+    "node": "*"
+  }
+}
