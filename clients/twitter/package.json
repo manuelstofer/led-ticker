@@ -1,0 +1,14 @@
+{
+  "author": "Manuel Stofer <manuel@takimata.ch>",
+  "name": "twitter",
+  "description": "twitter led ticker client",
+  "version": "0.0.0",
+  "dependencies": {
+  	"twitter": "*"
+  },
+  "devDependencies": {},
+  "optionalDependencies": {},
+  "engines": {
+    "node": "*"
+  }
+}
