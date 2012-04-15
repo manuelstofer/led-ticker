@@ -1,5 +1,8 @@
 
-import ledticker
+from transmitter        import Transmitter
+from messagethrottler   import MessageThrottler
+from twistedadapter     import TwistedAdapter
+
 import time
 import sys
 from twisted.internet import protocol, reactor
@@ -9,9 +12,9 @@ import options
 options = options.get_options()
 
 if not options.console:
-    Transmitter = ledticker.Transmitter
+    Transmitter = Transmitter
 else:
-    Transmitter = ledticker.DebugTransmitter
+    Transmitter = DebugTransmitter
 
 
 transmitter = Transmitter(
@@ -20,8 +23,8 @@ transmitter = Transmitter(
 
 # setup factory for twisted
 factory = protocol.ServerFactory()
-factory.protocol = ledticker.TwistedAdapter
-factory.queue    = ledticker.MessageThrottler(transmitter)
+factory.protocol = TwistedAdapter
+factory.queue    = MessageThrottler(transmitter)
 
 # run in twisted
 reactor.listenTCP(
