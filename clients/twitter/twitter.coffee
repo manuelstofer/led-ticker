@@ -7,13 +7,13 @@ net    	= require 'net'
 util    = require 'util'
 twitter = require 'twitter'
 fs		= require 'fs'
-config 	= require 'yaml-config'
 
-configFile = process.env.HOME + '/.ledticker/twitter.yaml'
+configFile = process.env.HOME + '/.ledticker/twitter.json'
 try
-	settings = config.readConfig configFile
+	settings = JSON.parse fs.readFileSync(configFile)
 catch err
 	console.log 'could not load config file: ' + configFile
+	console.log err
 	process.exit()
 
 #
