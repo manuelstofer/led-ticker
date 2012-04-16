@@ -1,0 +1,19 @@
+{
+  "author": "Manuel Stofer <manuel@takimata.ch>",
+  "name": "tcput",
+  "description": "pipe stdin over tcp",
+  "version": "0.0.1",
+  "repository": {
+    "url": ""
+  },
+  "dependencies": {
+  },
+  "devDependencies": {},
+  "optionalDependencies": {},
+  "engines": {
+    "node": "*"
+  },
+  "bin": {
+    "tcput": "./bin/tcput.js"
+  }
+}
