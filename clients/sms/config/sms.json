@@ -1,0 +1,9 @@
+{
+	"daemon": {
+		"host": "localhost",
+		"port": 3000
+	},
+	"contacts": { 
+		"1234567890": "Example",
+	}
+}

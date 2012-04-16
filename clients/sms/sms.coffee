@@ -1,25 +1,18 @@
 # 
 # sms client for the led-ticker daemon
-# receives sms using gammu
+# - receives sms using gammu
+# Author: Manuel Stofer
 #
 
-gammu 	= require '../lib/gammu'
+gammu 	= require './lib/gammu'
 net		= require 'net'
 _		= require 'underscore'
 fs		= require 'fs'
 
-contacts = JSON.parse fs.readFileSync('../contacts.json')
-
-config =
-	daemon:
-		host: 'localhost'
-		port: 3000
-
-
 #
 # connect to led ticker daemon
 connectToLedTicker = (callback)->
-	client = net.connect config.daemon.port, config.daemon.host, (err)-> callback client, err
+	client = net.connect settings.daemon.port, settings.daemon.host, (err)-> callback client, err
 
 
 #
@@ -48,6 +41,19 @@ sanitizeNumber = (phone)->
 		phone = phone.replace(///^0041///, '0')
 		phone = phone.replace(///:::.*///, '')
 	phone
+
+
+#
+# load config file
+configFile = process.env.HOME + '/.ledticker/sms.json'
+try
+	settings = JSON.parse fs.readFileSync(configFile)
+catch err
+	console.log 'could not load config file: ' + configFile
+	console.log err
+	process.exit()
+
+contacts = settings.contacts
 
 
 #
