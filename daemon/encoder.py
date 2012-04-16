@@ -1,8 +1,6 @@
 import operator
 import serial
 
-import commands
-
 class Encoder:
 
     def __init__(self, device_id):

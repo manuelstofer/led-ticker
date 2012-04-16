@@ -1,7 +1,3 @@
-from encoder import Encoder
-import commands
-import serial
-
 class DebugTransmitter:
 
     def __init__(   self, 

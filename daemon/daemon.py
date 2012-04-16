@@ -1,14 +1,11 @@
-
 from transmitter        import Transmitter
 from debugtransmitter   import DebugTransmitter
 from messagethrottler   import MessageThrottler
 from twistedadapter     import TwistedAdapter
+import options
 
-import time
-import sys
 from twisted.internet import protocol, reactor
 from twisted.application import service, internet
-import options
 
 options = options.get_options()
 
