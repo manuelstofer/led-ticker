@@ -5,8 +5,7 @@
 - This my student project. 
 - Its a network daemon for AM03128-H11 led ticker. 
 - Includes clients for twitter and SMS.
-
-Other led tickers might be compatible.
+- Other led tickers might be compatible.
 
 The project was about learning new languages, thats the reason
 why i choose python for the daemon, while the clients are written in coffee script.
@@ -14,10 +13,10 @@ why i choose python for the daemon, while the clients are written in coffee scri
 
 ## Daemon
 
-The daemon uses Twisted and pySerial
+The daemon uses Twisted and pySerial.
 
 ### Installation
-Make sure you have twisted installed
+Make sure you have twisted installed.
 
 run:
 ```
@@ -32,7 +31,7 @@ $ python daemon.py
 
 - copy config/twitter.json to $HOME/.ledticker/twitter.json
 - install dependencies with: ``` $ npm install ```
-- create a twitter app and update the config file (https://dev.twitter.com/apps)
+- create a twitter app and update the config file (https://dev.twitter.com/apps).
 
 run:
 ```
@@ -44,7 +43,7 @@ $ coffee twitter.coffee
 #### Installation
 
 - copy config/sms.json to $HOME/.ledticker/sms.json
-- install gammu
+- install gammu.
 - install the dependencies with: ``` $ npm install ```
 
 run:
