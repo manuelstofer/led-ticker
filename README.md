@@ -2,7 +2,9 @@
 
 ![Led Ticker](http://share.takimata.ch/ledticker.jpg "Led Ticker")
 
-This my student project. Its a network daemon for AM03128-H11 led ticker.
+- This my student project. 
+- Its a network daemon for AM03128-H11 led ticker. 
+- Clients which display tweets and SMS are included
 
 http://www.amplus.com.hk/LED_%20AM03128-H13.htm
 
