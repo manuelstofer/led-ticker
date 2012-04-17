@@ -2,7 +2,7 @@
 
 ![Led Ticker](http://share.takimata.ch/ledticker.jpg "Led Ticker")
 
-- This my student project. 
+- This is my student project. 
 - Its a network daemon for AM03128-H11 led ticker. 
 - Includes clients for twitter and SMS.
 - Other led tickers might be compatible.
