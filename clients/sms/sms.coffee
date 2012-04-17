@@ -33,7 +33,7 @@ sendMessages = (client, messages)->
 
 #
 # the country prefix is removed since not all numbers
-# in addresses include the prefix
+# in my contacts include the prefix
 sanitizeNumber = (phone)->
 	if phone?
 		phone = phone.replace(/// ///g, '')
