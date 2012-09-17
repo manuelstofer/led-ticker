@@ -4,7 +4,7 @@
 
 - This is my student project. 
 - Its a network daemon for the AM03128-H11 led ticker. 
-- Includes clients for twitter and SMS.
+- Includes clients to receive tweets and sms's.
 - Other led tickers might be compatible.
 
 The project was about learning new languages, thats the reason
