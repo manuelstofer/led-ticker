@@ -3,11 +3,11 @@ import commands
 import serial
 
 class Transmitter:
-    """ 
-        Sends content to the led ticker device. 
+    """
+        Sends content to the led ticker device.
         - transmission is blocking
     """
-    def __init__(   self, 
+    def __init__(   self,
                     device      = '/dev/ttyUSB0',
                     set_id      = True,
                     device_id   = "01",
@@ -34,6 +34,11 @@ class Transmitter:
     def set_schedule(self, pages):
         """ sets the schedule (order) of the pages """
         self._send_receive(commands.get_schedule_cmd(pages))
+
+    def clear_screen(self):
+        """ delete all pages """
+        self.add_message(" ", 0)
+	self.set_schedule([0])
 
     def delete_pages(self):
         """ delete all pages """

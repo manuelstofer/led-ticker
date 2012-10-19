@@ -1,10 +1,10 @@
 class DebugTransmitter:
 
-    def __init__(   self, 
-                    device      = '/dev/tty.SLAB_USBtoUART',
+    def __init__(   self,
+                    device      = '/dev/void',
                     set_id      = True,
                     device_id   = "01",
-                    debug           = True,
+                    debug       = True,
                  ):
         pass
 
@@ -20,3 +20,5 @@ class DebugTransmitter:
     def end(self):
         pass
 
+    def clear_screen(self):
+        print 'clear screen'

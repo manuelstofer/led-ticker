@@ -4,13 +4,13 @@ import Queue
 
 class MessageThrottler:
 
-    def __init__(self, transmitter, max_pages = 10, intervall = 15):
+    def __init__(self, transmitter, max_pages = 3, interval = 15):
         self.max_pages = max_pages
-        self.intervall = intervall
+        self.interval = interval
         self.transmitter = transmitter
 
         self._setup_thread()
-   
+
     def _setup_thread(self):
         self.message_queue = Queue.Queue()
         self.running = True
@@ -31,21 +31,26 @@ class MessageThrottler:
 
             # the received message is displayed first alone on the
             # screen, without the previous message
-            self.transmitter.add_message(message, next_page)
-            self.transmitter.set_schedule([next_page])
-
-            time.sleep(self.intervall)
-            
-            next_page += 1
-            if next_page > self.max_pages:
+            if message == "clear":
+                self.transmitter.clear_screen()
                 next_page = 0
-                full = True
+            else:
+                self.transmitter.add_message(message, next_page)
+                self.transmitter.set_schedule([next_page])
 
-            schedule = range(0, self.max_pages)
-            if not full:
-                schedule = range(0, next_page)
 
-            # the messages are displayed reverse chronological order
-            schedule.reverse()
-            self.transmitter.set_schedule(schedule)
+                time.sleep(self.interval)
+
+                next_page += 1
+                if next_page > self.max_pages:
+                    next_page = 0
+                    full = True
+
+                schedule = range(0, self.max_pages)
+                if not full:
+                    schedule = range(0, next_page)
+
+                # the messages are displayed reverse chronological order
+                schedule.reverse()
+                self.transmitter.set_schedule(schedule)
 
