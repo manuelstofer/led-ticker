@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 from transmitter        import Transmitter
 from debugtransmitter   import DebugTransmitter
 from messagethrottler   import MessageThrottler
