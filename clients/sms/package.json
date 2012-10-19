@@ -4,8 +4,8 @@
   "description": "sms led ticker client",
   "version": "0.0.0",
   "dependencies": {
-  	"coffee-script": "*",
-	"underscore": "*",
+    "coffee-script": "*",
+    "underscore": "*"
   },
   "devDependencies": {},
   "optionalDependencies": {},
