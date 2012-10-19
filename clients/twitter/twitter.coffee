@@ -28,6 +28,7 @@ isValidTweet = (tweet)-> tweet? and tweet.text? and tweet.user? and tweet.user.s
 # connect to twitter stream
 connectToTwitterStream = (callback)->
 	twit = new twitter(settings.api)
+	console.log 'tracking: ' + settings.track
 	twit.stream 'user', {track: settings.track}, (stream)-> callback stream
 
 #
