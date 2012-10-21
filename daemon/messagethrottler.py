@@ -34,6 +34,7 @@ class MessageThrottler:
             if message == "clear":
                 self.transmitter.clear_screen()
                 next_page = 0
+                full = False
             else:
                 self.transmitter.add_message(message, next_page)
                 self.transmitter.set_schedule([next_page])
