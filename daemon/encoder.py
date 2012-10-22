@@ -1,6 +1,7 @@
 # -*- coding: latin-1 -*-
 import operator
 import serial
+import re
 
 class Encoder:
 
