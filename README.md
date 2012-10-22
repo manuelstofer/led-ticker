@@ -7,8 +7,20 @@
 - Includes clients to receive tweets and sms's.
 - Other led tickers might be compatible.
 
-The project was about learning new languages, thats the reason
-why i choose python for the daemon, while the clients are written in coffee script.
+The project was about learning new languages, thats why the daemon is written
+in Python, while the clients are coffee script.
+
+
+## My Installation
+
+The LED-Ticker is currently installed in my living Room on a [Raspberry Pi](http://www.raspberrypi.org/ "Raspberry Pi")
+
+This is how it looks like in action: [Video](http://www.youtube.com/watch?v=0U8NBKy94rw "LED-Ticker Raspberry Pi")
+
+Its receiving Tweets and SMS. If you want to send a message tweet @anemonenstrasse or send a SMS to 0041 76 247 85 18
+
+
+
 
 
 ## Daemon
