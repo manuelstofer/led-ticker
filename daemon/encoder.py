@@ -24,6 +24,8 @@ class Encoder:
         return '%02X' % reduce(operator.xor, map(ord, str))
 
     def _clean_string(self,input_string):
+        """ encodes a string
+            copied from https://github.com/shackenberg/text2led.py """
         data = [['€','<U0>'], ['  ','<U1>'],
             ['‚','<U2>'], ['ƒ','<U3>'], ['„','<U4>'], ['…','<U5>'], ['†','<U6>'],
             ['‡','<U7>'], ['ˆ','<U8>'], ['‰','<U9>'], ['Š','<UA>'], ['‹','<UB>'],
