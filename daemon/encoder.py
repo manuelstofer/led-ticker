@@ -1,7 +1,6 @@
-# -*- coding: latin-1 -*-
+# -*- coding: utf-8 -*-
 import operator
 import serial
-import re
 
 class Encoder:
 
@@ -24,7 +23,7 @@ class Encoder:
             the checksum is the xor of each byte, represented as hex in ascii (2 bytes) """
         return '%02X' % reduce(operator.xor, map(ord, str))
 
-    def _clean_string(self,input_string):
+    def clean_string(self,input_string):
         data = [['?','<U0>'], ['  ','<U1>'],
             ['?','<U2>'], ['?','<U3>'], ['?','<U4>'], ['?','<U5>'], ['?','<U6>'],
             ['?','<U7>'], ['?','<U8>'], ['?','<U9>'], ['?','<UA>'], ['?','<UB>'],
@@ -54,7 +53,7 @@ class Encoder:
             ['ÿ','<U7F>'] ] # http://www.danshort.com/ASCIImap/indexhex.htm
 
         for unsafe, safe in data:
-            input_string =  re.sub(unsafe,safe,input_string)
+            input_string =  input_string.replace(unsafe,safe)
         return input_string
 
 
