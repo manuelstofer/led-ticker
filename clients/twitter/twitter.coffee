@@ -6,7 +6,7 @@
 net    	= require 'net'
 util    = require 'util'
 twitter = require 'twitter'
-fs		= require 'fs'
+fs      = require 'fs'
 
 configFile = process.env.HOME + '/.ledticker/twitter.json'
 try
