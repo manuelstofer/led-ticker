@@ -38,7 +38,7 @@ class Transmitter:
     def clear_screen(self):
         """ delete all pages """
         self.add_message(" ", 0)
-	self.set_schedule([0])
+        self.set_schedule([0])
 
     def delete_pages(self):
         """ delete all pages """
