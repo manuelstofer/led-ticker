@@ -34,7 +34,7 @@ stdin.on('data', function (data) {
     data = buffer + data;
   }
   if (connected) {
-    send(buffer);
+    send(data);
     buffer = '';
   } else {
     buffer += data;
