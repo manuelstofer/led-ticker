@@ -29,9 +29,13 @@ var send = function (data) {
 };
 
 stdin.on('data', function (data) {
-  data = data.toString().replace(/(\n\r?)+/g, '\r\n');
+  data = data.toString().replace(/(\n\r?)+/g, '\r\n');$
+  if (buffer.length) {
+    data = buffer + data;
+  }
   if (connected) {
     send(buffer);
+    buffer = '';
   } else {
     buffer += data;
   }
