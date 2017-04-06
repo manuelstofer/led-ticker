@@ -64,7 +64,7 @@ $ coffee sms.coffee
 
   (The MIT License)
 
-  Copyright (c) 2011 Manuel Stofer &lt;manuel@takimata.ch&gt;
+  Copyright (c) 2011 Manuel Stofer
 
   Permission is hereby granted, free of charge, to any person obtaining
   a copy of this software and associated documentation files (the
